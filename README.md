@@ -1,42 +1,14 @@
-1. What problem do we want to solve?
-With the original 1989 Tetris recently being ”beaten” (getting a score so high the game
-could not compute any further) we wanted to see if an AI was able to play Tetris up to a
-human level or maybe even better.
-2. What datasets did you use?
-We have been using Jstris as our version of Tetris. We grab pixels on the board to keep
-track of the pieces that are currently filling the board using the different colors of each
-piece as the differentiation. The dataset used is its own past runs as it keeps track of
-its previous results and compares it for improvement. The model takes in 4 types of
-information: The current piece, the piece in the hold function, the next piece, and the
-current board. This information is stored into a dictionary that the model reads from
-each time a piece makes a move.
-3. What models have you tried?
-We have been using a reinforcement learning model, specifically the Proximal Policy
-Optimization algorithm, where the AI plays a game being rewarded on the number of
-blocks placed. We tried multiple different reward systems, but ultimately found the best
-one for performance was a systems that rewarded +1 point for each block placed. It then
-compares its own performance (number of points rewarded) of the past games its played
-against one another to determine how it should play in the future.
-4. How to evaluate the performance of the model on your dataset?
-We evaluate the performance of its survivable based on the number of blocks placed. We
-originally measured it by number of rows, but were not seeing good results. With the
-switch to number of blocks placed we are seeing longer serviceability. After 48 hours of
-testing we noticed our model begun to put pieces more horizontally. This allowed the
-model to place many more pieces than it had since placing vertically caused the model
-to lose the game quicker. After 65 hours the model continued to improve its horizontal
-placements, but still has not consistently begun to clear rows. clearing rows will allow it
-to place more blocks in the future leading to longer serviceability. We hope that if the
-model was continued to be trained that it would find a consistent way to clear rows.
-5. Any results you would like to share?
-So far the model went from placing about 12 pieces on average to about 34 on average.
-This was over the course of 65 hour of training. This shows promise, but we need a way to
-more effectively spend time for quicker learning. Right now we are only able to play one game
-at a time. If we could get many games running at the same time we believe the increase
-Final Project Report-1
-in performance will be much greater. Additionally we believe that once the model learns
-about clearing rows we will see a large spike in performance. We think the way the model is
-functioning, going from a weak performance to a decent performance will take some time, but
-from a decent performance to a good one will be much quicker. Addtionally we believe that
-if we shifted away from Jstris and instead made our own Tetris game that the model could
-constantly be reading from, the model would function more efficiently and we may see a further
-increase in performance.
+1. **What problem do we want to solve?**  
+   With the original 1989 Tetris recently being "beaten" (achieving a score so high that the game could not compute any further), we wanted to explore whether an AI could play Tetris at a human level or perhaps even better.
+
+2. **What datasets did you use?**  
+   We have been using Jstris as our version of Tetris. We capture pixels on the board to track the pieces currently filling the board, using the different colors of each piece for differentiation. The dataset is composed of its own past runs, which are tracked and compared for improvement. The model takes in four types of information: the current piece, the piece in the hold function, the next piece, and the current board. This information is stored in a dictionary that the model reads from each time a piece makes a move.
+
+3. **What models have you tried?**  
+   We have been using a reinforcement learning model, specifically the Proximal Policy Optimization algorithm, where the AI plays a game and is rewarded based on the number of blocks placed. We experimented with different reward systems, but ultimately found that the best performance was achieved with a system that rewarded +1 point for each block placed. The model then compares its own performance (number of points rewarded) from past games to determine how it should play in the future.
+
+4. **How to evaluate the performance of the model on your dataset?**  
+   We evaluate the model's performance based on the number of blocks placed before losing. Initially, we measured performance by the number of rows cleared, but this did not yield good results. After switching to counting the number of blocks placed, we observed longer survival times. After 48 hours of testing, the model began to place pieces more horizontally, which allowed it to place more pieces overall. After 65 hours, the model continued to improve its horizontal placements but has not yet consistently cleared rows. Clearing rows would allow it to place more blocks in the future, leading to longer survivability. We believe that with continued training, the model would eventually find a consistent strategy for clearing rows.
+
+5. **Any results you would like to share?**  
+   So far, the model has improved from placing about 12 pieces on average to about 34 on average over the course of 65 hours of training. This shows promise, but we need a way to more effectively spend time for quicker learning. Currently, we are only able to play one game at a time. If we could run multiple games simultaneously, we believe performance would increase more rapidly. Additionally, we think that once the model learns how to clear rows, we will see a significant spike in performance. We also believe that if we shifted away from Jstris and instead developed our own Tetris game that the model could continuously read from, the model would function more efficiently, potentially leading to further performance improvements.
