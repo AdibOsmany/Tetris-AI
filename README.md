@@ -1,3 +1,10 @@
+### Tetris AI Bot
+
+- Engineered an advanced AI bot using OpenAI Gym, NumPy, and the Proximal Policy Optimization (PPO) algorithm in Stable Baselines3, achieving superior gameplay performance in Tetris by optimizing real-time decision-making and piece placement.
+- Integrated EasyOCR for real-time image recognition, effectively overcoming challenges related to dynamic game board assessment, which enabled the bot to rapidly analyze and respond to evolving gameplay conditions.
+- The project earned recognition for excellence at the 2024 SES Symposium on Generative AI in Teaching and Learning, demonstrating innovative applications of AI in gaming and serving as a valuable teaching tool for AI and machine learning principles.
+
+
 1. **What problem do I want to solve?**  
    With the original 1989 Tetris recently being "beaten" (achieving a score so high that the game could not compute any further), I wanted to explore whether an AI could play Tetris at a human level or perhaps even better.
 
